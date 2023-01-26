@@ -1,3 +1,5 @@
+// BONUS: Background images and size code have been added to "index.html" file
+
 function newImage(url, left, bottom){
     let object = document.createElement('img')
     object.src = url
@@ -5,6 +7,9 @@ function newImage(url, left, bottom){
     object.style.left = left + 'px'
     object.style.bottom = bottom + 'px'
     document.body.append(object)
+    object.addEventListener('dblclick', () => { // Added addEventlistener in order to doubleclick and remove all images listed in "newImage"
+        object.remove()
+    })
     return object
 }
 
@@ -23,13 +28,12 @@ let heightOfGrass = horizon
 
 
 
-newImage('assets/green-character.gif', 100, 100)
+newImage('assets/green-character.gif', 300, 100)
 newImage('assets/tree.png', 200, 300)
 newImage('assets/pillar.png', 350, 100)
 newImage('assets/pine-tree.png', 450, 200)
 newImage('assets/crate.png', 150, 200)
 newImage('assets/well.png', 500, 425)
-
 newItem('assets/sword.png', 500, 405)
 newItem('assets/sheild.png', 165, 185)
 newItem('assets/staff.png', 600, 100)
